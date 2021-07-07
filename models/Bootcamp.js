@@ -61,6 +61,7 @@ const BootcampSchema = new mongoose.Schema({
             "Business",
             'Data Science',
             'Business',
+            "Mobile Development",
             'Other'
         ]
     },

@@ -12,7 +12,7 @@ const BootcampSchema = new mongoose.Schema({
     description: {
         type: String,
         required: [true, 'Please add a description'],
-        maxlength: [50, 'Description can not be more than 500 characters']
+        maxlength: [500, 'Description can not be more than 500 characters']
     },
     website: {
         type: String,
@@ -37,11 +37,11 @@ const BootcampSchema = new mongoose.Schema({
         type: {
             type: String, // Don't do `{ location: { type: String } }`
             enum: ['Point'], // 'location.type' must be 'Point'
-            required: true
+            required: false
           },
           coordinates: {
             type: [Number],
-            required: true,
+            required: false,
             index: '2dspher'
           },
           formattedAdress: String,
@@ -56,9 +56,9 @@ const BootcampSchema = new mongoose.Schema({
         type: [String],
         required: true,
         enum: [
-            'web Development',
-            'Mobile Development',
-            'UI/UX',
+            "Web Development", 
+            "UI/UX", 
+            "Business",
             'Data Science',
             'Business',
             'Other'

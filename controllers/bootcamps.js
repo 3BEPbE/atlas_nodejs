@@ -53,7 +53,7 @@ exports.createBootcamp = async (req, res, next) => {
 // @route   PUT /api/v1/bootcamp/:id
 // @access  Private
 
-exports.updateBootcamp = (req, res, next) => {
+exports.updateBootcamp = async (req, res, next) => {
     try {
         const bootcamp = await Bootcamp.findByIdAndUpdate(req.params.id, req.body, {
             new: true,
